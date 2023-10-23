@@ -1,8 +1,6 @@
-'use strict';
-
 function makeTransaction(quantity, pricePerDroid, customerCredits) {
     let sum = pricePerDroid * quantity;
-      return  (pricePerDroid * quantity <= customerCredits && customerCredits >= sum) ? `You ordered ${quantity} droids worth ${sum} credits!` : "Insufficient funds!";  
+      return  (sum <= customerCredits) ? `You ordered ${quantity} droids worth ${sum} credits!` : "Insufficient funds!";  
 }
   console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
   console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
